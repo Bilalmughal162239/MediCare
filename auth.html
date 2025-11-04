@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Login & Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --hospital-blue: #2a7fff;
+            --dark-blue: #0052cc;
+            --light-blue: #e6f0ff;
+            --emergency-red: #ff4d4f;
+            --text-dark: #333;
+            --text-light: #777;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding: 20px 0; */
+        }
+
+        #Login_Section {
+            width: 100%;
+            height: 100vh;
+            background-image: url(asset/Loginbg.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .btn-primary {
+            background-color: var(--hospital-blue);
+            border-color: var(--hospital-blue);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+        }
+
+        .auth-card {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            /* width: 80%; */
+            margin: 0 auto;
+            max-width: 950px;
+            border: none;
+        }
+
+        .auth-header {
+            background: linear-gradient(to right, var(--hospital-blue), var(--dark-blue));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .auth-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .auth-forms {
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-control:focus {
+            border-color: var(--hospital-blue);
+            box-shadow: 0 0 0 0.25rem rgba(42, 127, 255, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background-color: var(--light-blue);
+            border-color: var(--hospital-blue);
+        }
+
+        .social-btn i {
+            margin-right: 8px;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--hospital-blue);
+            border-color: var(--hospital-blue);
+        }
+
+        .forgot-password {
+            font-size: 0.9rem;
+            text-align: right;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .forgot-password a {
+            color: var(--hospital-blue);
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+
+        .invalid-feedback {
+            font-size: 0.85rem;
+        }
+
+        .password-requirements {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .password-requirements ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .toggle-auth {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .toggle-auth a {
+            color: var(--hospital-blue);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .toggle-auth a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-100 d-flex justify-content-center align-items-center p-0" id="Login_Section">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-logo">MediCare</div>
+                    <p class="mb-0" id="authHeaderText">Sign in to your account</p>
+                </div>
+
+                <div class="auth-forms">
+                    <!-- Login Form -->
+                    <div id="loginForm">
+                        <form id="loginFormElement" novalidate>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                                <div class="invalid-feedback">Please enter your password.</div>
+                                <a href="#" class="forgot-password">Forgot password?</a>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                        </form>
+                        <button type="submit" class="btn btn-primary auth-btn" onclick="Login()">Sign In</button>
+
+                        <div class="divider">
+                            <span>OR CONTINUE WITH</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button class="social-btn">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button class="social-btn">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+
+                        <div class="toggle-auth">
+                            Don't have an account? <a id="showRegister">Sign up</a>
+                        </div>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div id="registerForm" style="display: none;">
+                        <form id="registerFormElement" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="registerEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                </div>
+                            </div>
+                            <div class="password-requirements">
+                                Password must contain:
+                                <ul>
+                                    <li>At least 8 characters</li>
+                                    <li>At least one uppercase letter</li>
+                                    <li>At least one lowercase letter</li>
+                                    <li>At least one number</li>
+                                    <li>At least one special character</li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required
+                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                                    <div class="invalid-feedback">Password does not meet requirements.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                    <div class="invalid-feedback">Passwords do not match.</div>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#"
+                                        class="text-decoration-none">Terms of Service</a> and <a href="#"
+                                        class="text-decoration-none">Privacy Policy</a></label>
+                                <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+                            </div>
+                        </form>
+                        <button type="submit" class="btn btn-primary auth-btn" onclick="Register()">Create
+                            Account</button>
+
+                        <div class="divider">
+                            <span>OR REGISTER WITH</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button class="social-btn">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button class="social-btn">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+
+                        <div class="toggle-auth">
+                            Already have an account? <a id="showLogin">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Custom js -->
+    <script src="index.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Toggle between login and register forms
+            $('#showRegister').click(function () {
+                $('#loginForm').hide();
+                $('#registerForm').show();
+                $('#authHeaderText').text('Create your account');
+            });
+
+            $('#showLogin').click(function () {
+                $('#registerForm').hide();
+                $('#loginForm').show();
+                $('#authHeaderText').text('Sign in to your account');
+            });
+
+            // Login form validation
+            const loginFormElement = document.getElementById('loginFormElement');
+            loginFormElement.addEventListener('submit', function (event) {
+                if (!loginFormElement.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                loginFormElement.classList.add('was-validated');
+            }, false);
+
+            // Register form validation
+            const registerFormElement = document.getElementById('registerFormElement');
+            const password = document.getElementById('registerPassword');
+            const confirmPassword = document.getElementById('confirmPassword');
+
+            // Check if passwords match
+            confirmPassword.addEventListener('input', function () {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+            });
+
+            registerFormElement.addEventListener('submit', function (event) {
+                if (!registerFormElement.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                registerFormElement.classList.add('was-validated');
+            }, false);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Departments</title>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="Department.css">
+    <!-- Owl carouel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Navbar css -->
+    <link rel="stylesheet" href="head&food.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hospital"></i> MediCare+
+            </a>
+
+            <!-- Mobile Toggle Button (hidden on desktop) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Menu (hidden on mobile) -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Departments
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-heartbeat me-2"></i>
+                                    Cardiology</a></li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-brain me-2"></i>
+                                    Neurology</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-baby me-2"></i>
+                                    Pediatrics</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-bone me-2"></i>
+                                    Orthopedics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Doctor.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Serviec.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="auth.html" onclick="Login()"><i
+                                        class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                            <li><a class="dropdown-item" href="Profile.html"><i
+                                        class="fas fa-user-circle me-2"></i>Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i
+                                        class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link emergency-btn1" href="#" data-bs-toggle="modal"
+                            data-bs-target="#emergencyModal">
+                            <i class="fas fa-phone-alt"></i> Emergency
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Off-Canvas Menu (only for small screens) -->
+            <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">
+                        <i class="fas fa-hospital me-2"></i> MediCare+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-procedures"></i> Departments
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Department.html"><i
+                                            class="fas fa-heartbeat me-2"></i>
+                                        Cardiology</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-brain me-2"></i>
+                                        Neurology</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-baby me-2"></i>
+                                        Pediatrics</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-bone me-2"></i>
+                                        Orthopedics</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Doctor.html">
+                                <i class="fas fa-user-md"></i> Doctors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Serviec.html">
+                                <i class="fas fa-medkit"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown ms-lg-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="auth.html" onclick="Login()"><i
+                                            class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                                <li><a class="dropdown-item" href="Profile.html"><i
+                                            class="fas fa-user-circle me-2"></i>Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i
+                                            class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">
+                                <i class="fas fa-info-circle"></i> About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link emergency-btn1" href="#" data-bs-toggle="modal"
+                                data-bs-target="#emergencyModal">
+                                <i class="fas fa-phone-alt"></i> Emergency
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-4">Our Medical Departments</h1>
+                <p class="lead mb-5">Specialized care units equipped with cutting-edge technology and expert
+                    professionals
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-light btn-lg px-4">Find a Doctor</button>
+                    <button class="btn btn-outline-light btn-lg px-4">Book Appointment</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <i class="fas fa-hospital-user"></i>
+                            </div>
+                            <h3 class="fw-bold">5</h3>
+                            <p class="mb-0 text-muted">Specialized Departments</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3 class="fw-bold">30+</h3>
+                            <p class="mb-0 text-muted">Specialized Doctors</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3 class="fw-bold">15+</h3>
+                            <p class="mb-0 text-muted">Advanced Equipment</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <i class="fas fa-procedures"></i>
+                            </div>
+                            <h3 class="fw-bold">5K+</h3>
+                            <p class="mb-0 text-muted">Successful Treatments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container py-5">
+
+            <!-- Department Overview -->
+            <h2 class="section-title">Our Specialized Departments</h2>
+            <div class="row g-4 mb-5">
+                <!-- Department 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="department-card">
+                        <img src="asset/Cardiology.png" class="img-fluid w-100" alt="Cardiology Department">
+                        <div class="p-4 text-center">
+                            <div class="department-icon mx-auto">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Cardiology</h3>
+                            <p class="text-muted mb-3">Comprehensive heart care with advanced diagnostic and treatment
+                                facilities.</p>
+                            <a href="#cardiology" class="btn btn-primary" data-bs-toggle="tab"
+                                data-bs-target="#cardiology">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="department-card">
+                        <img src="asset/Neurology.png" class="img-fluid w-100" alt="Neurology Department">
+                        <div class="p-4 text-center">
+                            <div class="department-icon mx-auto">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Neurology</h3>
+                            <p class="text-muted mb-3">Specialized care for disorders of the brain, spinal cord, and
+                                nervous
+                                system.</p>
+                            <a href="#neurology" class="btn btn-primary" data-bs-toggle="tab"
+                                data-bs-target="#neurology">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="department-card">
+                        <img src="asset/Orthopedics.png" class="img-fluid w-100" alt="Orthopedics Department">
+                        <div class="p-4 text-center">
+                            <div class="department-icon mx-auto">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Orthopedics</h3>
+                            <p class="text-muted mb-3">Expert care for musculoskeletal issues, joint replacements, and
+                                sports injuries.</p>
+                            <a href="#orthopedics" class="btn btn-primary" data-bs-toggle="tab"
+                                data-bs-target="#orthopedics">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="department-card">
+                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="department-img img-fluid" alt="Pediatrics Department">
+                        <div class="p-4 text-center">
+                            <div class="department-icon mx-auto">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Pediatrics</h3>
+                            <p class="text-muted mb-3">Specialized healthcare for infants, children, and adolescents in
+                                a
+                                child-friendly environment.</p>
+                            <a href="#pediatrics" class="btn btn-primary" data-bs-toggle="tab"
+                                data-bs-target="#pediatrics">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="department-card">
+                        <img src="asset/Radiology.png" class="img-fluid w-100" alt="Radiology Department">
+                        <div class="p-4 text-center">
+                            <div class="department-icon mx-auto">
+                                <i class="fas fa-x-ray"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Radiology</h3>
+                            <p class="text-muted mb-3">Advanced imaging services including X-rays, CT scans, MRIs, and
+                                ultrasounds for accurate diagnosis.</p>
+                            <a href="#radiology" class="btn btn-primary" data-bs-toggle="tab"
+                                data-bs-target="#radiology">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Details -->
+            <h2 class="section-title">Department Details</h2>
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs" id="departmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="cardiology-tab" data-bs-toggle="tab"
+                        data-bs-target="#cardiology" type="button" role="tab">Cardiology</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="neurology-tab" data-bs-toggle="tab" data-bs-target="#neurology"
+                        type="button" role="tab">Neurology</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="orthopedics-tab" data-bs-toggle="tab" data-bs-target="#orthopedics"
+                        type="button" role="tab">Orthopedics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pediatrics-tab" data-bs-toggle="tab" data-bs-target="#pediatrics"
+                        type="button" role="tab">Pediatrics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="radiology-tab" data-bs-toggle="tab" data-bs-target="#radiology"
+                        type="button" role="tab">Radiology</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="departmentTabsContent">
+                <!-- Cardiology Tab -->
+                <div class="tab-pane fade show active" id="cardiology" role="tabpanel">
+                    <div class="department-detail">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-4">Cardiology Department</h3>
+                                <p class="lead mb-4">Our Cardiology Department offers comprehensive heart care with
+                                    state-of-the-art technology and experienced specialists.</p>
+                                <p>The department is equipped with advanced diagnostic and treatment facilities to
+                                    provide
+                                    the best care for patients with heart conditions. Our team of cardiologists, cardiac
+                                    surgeons, and specialized nurses work together to deliver personalized treatment
+                                    plans.
+                                </p>
+
+                                <h4 class="mt-4 mb-3">Services Offered</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Cardiac Consultation</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Electrocardiogram (ECG)</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Echocardiography</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Stress Testing</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Cardiac Catheterization</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Angioplasty & Stenting</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Pacemaker Implantation</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Cardiac Rehabilitation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 bg-light rounded-3">
+                                    <h4 class="mb-3">Meet Our Specialists</h4>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Sarah Johnson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Sarah Johnson</h5>
+                                            <p class="doctor-specialty">Cardiac Surgeon</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Michael Chen">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Michael Chen</h5>
+                                            <p class="doctor-specialty">Interventional Cardiologist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Emily Rodriguez">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Emily Rodriguez</h5>
+                                            <p class="doctor-specialty">Pediatric Cardiologist</p>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-4 mb-3">Equipment</h4>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Cardiac Catheterization Lab</h5>
+                                        <p class="small mb-0">State-of-the-art facility for diagnosing and treating
+                                            heart
+                                            conditions.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">3D Echocardiography</h5>
+                                        <p class="small mb-0">Advanced imaging for detailed heart structure
+                                            visualization.
+                                        </p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Cardiac MRI</h5>
+                                        <p class="small mb-0">High-resolution imaging for comprehensive heart
+                                            assessment.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurology Tab -->
+                <div class="tab-pane fade" id="neurology" role="tabpanel">
+                    <div class="department-detail">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-4">Neurology Department</h3>
+                                <p class="lead mb-4">Our Neurology Department specializes in the diagnosis and treatment
+                                    of
+                                    disorders of the nervous system.</p>
+                                <p>The department provides comprehensive care for conditions affecting the brain, spinal
+                                    cord, and peripheral nerves. Our team of neurologists and neurosurgeons use advanced
+                                    diagnostic tools and innovative treatments to address complex neurological
+                                    disorders.
+                                </p>
+
+                                <h4 class="mt-4 mb-3">Services Offered</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Neurological Consultation</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Electroencephalography (EEG)</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Electromyography (EMG)</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Nerve Conduction Studies</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Stroke Management</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Epilepsy Treatment</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Headache & Migraine Care</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Movement Disorder Treatment</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 bg-light rounded-3">
+                                    <h4 class="mb-3">Meet Our Specialists</h4>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Michael Chen">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Michael Chen</h5>
+                                            <p class="doctor-specialty">Neurologist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. James Wilson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. James Wilson</h5>
+                                            <p class="doctor-specialty">Neurosurgeon</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Emily Rodriguez">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Emily Rodriguez</h5>
+                                            <p class="doctor-specialty">Pediatric Neurologist</p>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-4 mb-3">Equipment</h4>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">3T MRI Scanner</h5>
+                                        <p class="small mb-0">High-resolution imaging for detailed brain and spine
+                                            visualization.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">EEG Monitoring System</h5>
+                                        <p class="small mb-0">Advanced brain activity monitoring for epilepsy and other
+                                            conditions.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Neuronavigation System</h5>
+                                        <p class="small mb-0">Precision guidance for complex neurosurgical procedures.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthopedics Tab -->
+                <div class="tab-pane fade" id="orthopedics" role="tabpanel">
+                    <div class="department-detail">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-4">Orthopedics Department</h3>
+                                <p class="lead mb-4">Our Orthopedics Department specializes in the diagnosis, treatment,
+                                    and
+                                    prevention of disorders of the musculoskeletal system.</p>
+                                <p>The department provides comprehensive care for conditions affecting bones, joints,
+                                    ligaments, tendons, and muscles. Our team of orthopedic surgeons and specialists use
+                                    advanced techniques and innovative treatments to address complex orthopedic issues.
+                                </p>
+
+                                <h4 class="mt-4 mb-3">Services Offered</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Orthopedic Consultation</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Joint Replacement Surgery</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Arthroscopic Surgery</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Fracture Treatment</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Sports Injury Management</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Spine Surgery</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Physical Therapy</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Rehabilitation Services</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 bg-light rounded-3">
+                                    <h4 class="mb-3">Meet Our Specialists</h4>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. James Wilson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. James Wilson</h5>
+                                            <p class="doctor-specialty">Orthopedic Surgeon</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Michael Chen">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Michael Chen</h5>
+                                            <p class="doctor-specialty">Sports Medicine Specialist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Emily Rodriguez">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Emily Rodriguez</h5>
+                                            <p class="doctor-specialty">Pediatric Orthopedist</p>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-4 mb-3">Equipment</h4>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Arthroscopy System</h5>
+                                        <p class="small mb-0">Minimally invasive surgical technique for joint
+                                            procedures.
+                                        </p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Computer-Assisted Surgery</h5>
+                                        <p class="small mb-0">Precision guidance for joint replacement procedures.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Rehabilitation Equipment</h5>
+                                        <p class="small mb-0">Comprehensive facilities for post-surgery recovery.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pediatrics Tab -->
+                <div class="tab-pane fade" id="pediatrics" role="tabpanel">
+                    <div class="department-detail">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-4">Pediatrics Department</h3>
+                                <p class="lead mb-4">Our Pediatrics Department provides specialized healthcare for
+                                    infants,
+                                    children, and adolescents in a child-friendly environment.</p>
+                                <p>The department offers comprehensive care for children from birth through adolescence.
+                                    Our
+                                    team of pediatricians and pediatric specialists are trained to address the unique
+                                    healthcare needs of young patients in a comfortable and supportive setting.</p>
+
+                                <h4 class="mt-4 mb-3">Services Offered</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Well-Child Check-ups</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Vaccinations</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Developmental Assessments</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Acute Illness Treatment</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Chronic Disease Management</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Pediatric Surgery</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Behavioral Health Services</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Pediatric Emergency Care</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 bg-light rounded-3">
+                                    <h4 class="mb-3">Meet Our Specialists</h4>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Emily Rodriguez">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Emily Rodriguez</h5>
+                                            <p class="doctor-specialty">Pediatrician</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Sarah Johnson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Sarah Johnson</h5>
+                                            <p class="doctor-specialty">Pediatric Cardiologist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Michael Chen">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Michael Chen</h5>
+                                            <p class="doctor-specialty">Pediatric Neurologist</p>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-4 mb-3">Equipment</h4>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Child-Sized Medical Equipment</h5>
+                                        <p class="small mb-0">Specialized tools designed for pediatric patients.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Pediatric Monitoring Systems</h5>
+                                        <p class="small mb-0">Advanced monitoring for infants and children.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Child-Friendly Examination Rooms</h5>
+                                        <p class="small mb-0">Comfortable spaces designed to reduce anxiety.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radiology Tab -->
+                <div class="tab-pane fade" id="radiology" role="tabpanel">
+                    <div class="department-detail">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-4">Radiology Department</h3>
+                                <p class="lead mb-4">Our Radiology Department provides advanced imaging services for
+                                    accurate diagnosis and treatment planning.</p>
+                                <p>The department is equipped with state-of-the-art imaging technology operated by
+                                    experienced radiologists and technicians. We offer a comprehensive range of
+                                    diagnostic
+                                    imaging services to support all medical specialties.</p>
+
+                                <h4 class="mt-4 mb-3">Services Offered</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>X-ray Imaging</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Computed Tomography (CT)</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Magnetic Resonance Imaging (MRI)</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Ultrasound</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Mammography</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Fluoroscopy</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Nuclear Medicine</span>
+                                        </div>
+                                        <div class="department-feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Interventional Radiology</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 bg-light rounded-3">
+                                    <h4 class="mb-3">Meet Our Specialists</h4>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. James Wilson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. James Wilson</h5>
+                                            <p class="doctor-specialty">Radiologist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Lisa Thompson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Lisa Thompson</h5>
+                                            <p class="doctor-specialty">Interventional Radiologist</p>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                            class="doctor-img" alt="Dr. Sarah Johnson">
+                                        <div>
+                                            <h5 class="doctor-name">Dr. Sarah Johnson</h5>
+                                            <p class="doctor-specialty">Neuroradiologist</p>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-4 mb-3">Equipment</h4>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">3T MRI Scanner</h5>
+                                        <p class="small mb-0">High-resolution imaging for detailed visualization.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Multi-Slice CT Scanner</h5>
+                                        <p class="small mb-0">Advanced imaging for rapid and detailed scans.</p>
+                                    </div>
+                                    <div class="equipment-item">
+                                        <h5 class="h6">Digital Mammography</h5>
+                                        <p class="small mb-0">State-of-the-art breast imaging technology.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="bg-light p-5 rounded-3 text-center mt-5" style="border-radius: 16px;">
+                <h2 class="mb-3">Need Specialized Medical Care?</h2>
+                <p class="lead mb-4">Our departments are equipped with cutting-edge technology and staffed by
+                    experienced
+                    specialists.</p>
+                <button class="btn btn-primary btn-lg px-5">Book an Appointment</button>
+            </div>
+        </div>
+    </main>
+    <!-- Emergency Button -->
+    <button class="emergency-btn" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+        <i class="fas fa-plus-circle"></i>
+    </button>
+
+    <!-- Emergency Modal -->
+    <div class="modal fade emergency-modal" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emergencyModalLabel"><i class="fas fa-exclamation-triangle"></i>
+                        Emergency Services</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger mb-4">
+                        <strong>IMPORTANT:</strong> If you are experiencing a life-threatening emergency, please call
+                        911 immediately or go to your nearest emergency room.
+                    </div>
+
+                    <h5 class="mb-4">Emergency Contact Information</h5>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Emergency Hotline</div>
+                            <div class="emergency-contact-value">+1 (800) 911-MEDI</div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Ambulance Service</div>
+                            <div class="emergency-contact-value">+1 (800) 247-7911</div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Emergency Room Location</div>
+                            <div class="emergency-contact-value">123 Medical Center Drive, New York, NY 10001</div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-4">Quick Actions</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <a href="tel:+18009116334" class="emergency-action-btn">
+                                <i class="fas fa-phone-alt"></i> Call Emergency Hotline
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-video"></i> Start Emergency Video Call
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-map-marker-alt"></i> Get Directions to ER
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-first-aid"></i> First Aid Instructions
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-4">Emergency Services We Provide</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i> Cardiac
+                                    Emergencies</li>
+                                <li class="list-group-item"><i class="fas fa-brain text-danger me-2"></i> Stroke
+                                    Treatment</li>
+                                <li class="list-group-item"><i class="fas fa-bone text-danger me-2"></i> Trauma Care
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-lungs text-danger me-2"></i> Respiratory
+                                    Emergencies</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fas fa-allergies text-danger me-2"></i> Severe
+                                    Allergic Reactions</li>
+                                <li class="list-group-item"><i class="fas fa-thermometer-full text-danger me-2"></i>
+                                    High Fever Treatment</li>
+                                <li class="list-group-item"><i class="fas fa-pills text-danger me-2"></i> Poisoning &
+                                    Overdose</li>
+                                <li class="list-group-item"><i class="fas fa-baby text-danger me-2"></i> Pediatric
+                                    Emergencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="tel:+18009116334" class="btn btn-danger">Call Emergency Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- About Column -->
+            <div class="col-lg-4 col-md-6 footer-col">
+              <div class="footer-about p-0">
+                <a href="#" class="footer-logo text-decoration-none">
+                  <i class="fas fa-hospital bg-white rounded-circle text-primary py-3 px-3"></i> MediCare+
+                </a>
+                <p>Providing exceptional healthcare services with compassion and excellence since 1995. Our
+                  mission is to deliver high-quality, patient-centered care.</p>
+                <div class="footer-social text-decoration-none">
+                  <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="text-decoration-none"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Quick Links Column -->
+            <div class="col-lg-2 col-md-6 footer-col">
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links p-0">
+                <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="About.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                <li><a href="Serviec.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                <li><a href="Doctor.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Departments</a></li>
+                <li><a href="Contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+              </ul>
+            </div>
+    
+            <!-- Departments Column -->
+            <div class="col-lg-2 col-md-6 footer-col">
+              <h4 class="footer-heading">Departments</h4>
+              <ul class="footer-links p-0">
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Neurology</a></li>
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#emergencyModal"><i class="fas fa-chevron-right"></i>
+                    Emergency
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+            <!-- Contact Column -->
+            <div class="col-lg-4 col-md-6 footer-col">
+              <h4 class="footer-heading">Contact Us</h4>
+              <ul class="footer-contact p-0">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Medical Drive, Health City, HC 12345</span>
+                </li>
+                <li>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>+1 (123) 456-7890<br>+1 (123) 456-7891</span>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <span>info@medicare.com<br>support@medicare.com</span>
+                </li>
+                <li>
+                  <i class="fas fa-clock"></i>
+                  <span>24/7 Emergency Services<br>OPD: Mon-Sat, 8:00 AM - 8:00 PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Newsletter Section -->
+          <div class="row mt-5">
+            <div class="col-lg-6">
+              <h4 class="footer-heading">Subscribe to Newsletter</h4>
+              <p class="footer-newsletter">Stay updated with our latest health news and offers.</p>
+            </div>
+            <div class="col-lg-6">
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="container">
+              <p>&copy; 2023 MediCare+ Hospital. All Rights Reserved. | <a href="#"
+                  style="color: var(--hospital-blue);">Privacy Policy</a> | <a href="#"
+                  style="color: var(--hospital-blue);">Terms of Service</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Coutom js -->
+       <script src="index.js"></script>
+       <!-- Sweet Alert -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Sweert Alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Custom js -->
+    <script src="index.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Show the tab content when clicking on department cards
+            $('.department-card .btn').on('click', function (e) {
+                e.preventDefault();
+                const target = $(this).data('bs-target');
+                $(`#departmentTabs button[data-bs-target="${target}"]`).tab('show');
+                $('html, body').animate({
+                    scrollTop: $("#departmentTabs").offset().top - 100
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

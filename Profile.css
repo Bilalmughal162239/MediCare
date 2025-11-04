@@ -1,0 +1,443 @@
+:root {
+    --hospital-blue: #2a7fff;
+    --dark-blue: #0052cc;
+    --light-blue: #e6f0ff;
+    --emergency-red: #ff4d4f;
+    --text-dark: #333;
+    --text-light: #777;
+    --success-green: #52c41a;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+.btn-primary {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-outline-primary {
+    color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.bg-light {
+    background-color: var(--light-blue) !important;
+}
+
+.profile-header {
+    background: linear-gradient(to right, var(--hospital-blue), var(--dark-blue));
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+.profile-nav {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.profile-nav .nav-link {
+    color: var(--text-dark);
+    padding: 15px 20px;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.profile-nav .nav-link:hover {
+    color: var(--hospital-blue);
+    background-color: var(--light-blue);
+}
+
+.profile-nav .nav-link.active {
+    color: var(--hospital-blue);
+    border-bottom: 2px solid var(--hospital-blue);
+    background-color: var(--light-blue);
+    font-weight: 500;
+}
+
+.profile-nav .nav-link i {
+    margin-right: 10px;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.profile-card-title {
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.profile-id {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.profile-status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--hospital-blue);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-control:focus {
+    border-color: var(--hospital-blue);
+    box-shadow: 0 0 0 0.25rem rgba(42, 127, 255, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-check-input:checked {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.appointment-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+.appointment-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.appointment-details {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.appointment-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-confirmed {
+    background-color: rgba(82, 196, 26, 0.1);
+    color: var(--success-green);
+}
+
+.status-pending {
+    background-color: rgba(250, 173, 20, 0.1);
+    color: #faad14;
+}
+
+.status-cancelled {
+    background-color: rgba(255, 77, 79, 0.1);
+    color: var(--emergency-red);
+}
+
+.medical-record {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.medical-record:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.record-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.record-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.record-doctor {
+    color: var(--hospital-blue);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.record-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.record-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.record-label {
+    width: 120px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.record-value {
+    flex: 1;
+    color: var(--text-light);
+}
+
+.notification-item {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+    background-color: var(--light-blue);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.notification-time {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.notification-unread {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--hospital-blue);
+    margin-left: 10px;
+}
+
+.billing-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.billing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.billing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.billing-title {
+    font-weight: 600;
+}
+
+.billing-amount {
+    font-weight: 700;
+    color: var(--hospital-blue);
+}
+
+.billing-details {
+    margin-bottom: 15px;
+}
+
+.billing-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.billing-label {
+    color: var(--text-light);
+}
+
+.billing-value {
+    font-weight: 500;
+}
+
+.billing-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-paid {
+    background-color: rgba(82, 196, 26, 0.1);
+    color: var(--success-green);
+}
+
+.status-unpaid {
+    background-color: rgba(255, 77, 79, 0.1);
+    color: var(--emergency-red);
+}
+
+.status-processing {
+    background-color: rgba(250, 173, 20, 0.1);
+    color: #faad14;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-btn {
+    border: 2px dashed #e0e0e0;
+    color: var(--text-light);
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    border-color: var(--hospital-blue);
+    color: var(--hospital-blue);
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}

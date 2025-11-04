@@ -1,0 +1,334 @@
+:root {
+    --hospital-blue: #2a7fff;
+    --dark-blue: #0052cc;
+    --light-blue: #e6f0ff;
+    --emergency-red: #ff4d4f;
+    --text-dark: #333;
+    --text-light: #777;
+    --footer-bg: #0a1f44;
+    --footer-text: #a8b2d1;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+.btn-primary {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-outline-primary {
+    color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.bg-light {
+    background-color: var(--light-blue) !important;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(42, 127, 255, 0.85), rgba(0, 82, 204, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 50px;
+}
+
+.doctor-card {
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.doctor-img {
+    height: 280px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.doctor-card:hover .doctor-img {
+    transform: scale(1.05);
+}
+
+.doctor-specialty {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--hospital-blue);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.doctor-info {
+    padding: 25px;
+    position: relative;
+}
+
+.doctor-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.doctor-position {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--hospital-blue);
+    color: white;
+}
+
+.book-btn {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(42, 127, 255, 0.3);
+}
+
+.schedule-table th,
+.schedule-table td {
+    text-align: center;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.schedule-table th {
+    background-color: var(--hospital-blue);
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: rgba(230, 240, 255, 0.5);
+}
+
+.schedule-table tr:hover {
+    background-color: rgba(42, 127, 255, 0.05);
+}
+
+.available {
+    background-color: rgba(42, 127, 255, 0.1);
+    color: var(--hospital-blue);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.unavailable {
+    background-color: rgba(119, 119, 119, 0.1);
+    color: var(--text-light);
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.emergency {
+    background-color: rgba(255, 77, 79, 0.1);
+    color: var(--emergency-red);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.nav-tabs {
+    border: none;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--hospital-blue);
+    background-color: rgba(42, 127, 255, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--hospital-blue);
+    border: none;
+    font-weight: 500;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--hospital-blue);
+}
+
+.custom-table {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.custom-table thead th {
+    background-color: var(--hospital-blue);
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 15px;
+}
+
+.custom-table tbody tr:hover {
+    background-color: rgba(42, 127, 255, 0.05);
+}
+
+.custom-table .btn {
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.85rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--hospital-blue);
+    color: white !important;
+    border: 1px solid var(--hospital-blue);
+    border-radius: 5px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--light-blue);
+    color: var(--dark-blue) !important;
+    border: 1px solid var(--light-blue);
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 30px 5px 15px;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 25px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.stats-icon {
+    font-size: 2.5rem;
+    color: var(--hospital-blue);
+    margin-bottom: 15px;
+}
+
+.appointment-form {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.appointment-form .form-control,
+.appointment-form .form-select {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.appointment-form .form-control:focus,
+.appointment-form .form-select:focus {
+    border-color: var(--hospital-blue);
+    box-shadow: 0 0 0 0.25rem rgba(42, 127, 255, 0.25);
+}

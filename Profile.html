@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="Profile.css">
+    <!-- Owl carouel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Navbar css -->
+    <link rel="stylesheet" href="head&food.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hospital"></i> MediCare+
+            </a>
+
+            <!-- Mobile Toggle Button (hidden on desktop) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Menu (hidden on mobile) -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Departments
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-heartbeat me-2"></i>
+                                    Cardiology</a></li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-brain me-2"></i>
+                                    Neurology</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-baby me-2"></i>
+                                    Pediatrics</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Department.html"><i class="fas fa-bone me-2"></i>
+                                    Orthopedics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Doctor.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Serviec.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="auth.html" onclick="Login()"><i
+                                        class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                            <li><a class="dropdown-item" href="Profile.html"><i
+                                        class="fas fa-user-circle me-2"></i>Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i
+                                        class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link emergency-btn1" href="#" data-bs-toggle="modal"
+                            data-bs-target="#emergencyModal">
+                            <i class="fas fa-phone-alt"></i> Emergency
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Off-Canvas Menu (only for small screens) -->
+            <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">
+                        <i class="fas fa-hospital me-2"></i> MediCare+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-procedures"></i> Departments
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Department.html"><i
+                                            class="fas fa-heartbeat me-2"></i>
+                                        Cardiology</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-brain me-2"></i>
+                                        Neurology</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-baby me-2"></i>
+                                        Pediatrics</a></li>
+                                <li><a class="dropdown-item" href="Department.html"><i class="fas fa-bone me-2"></i>
+                                        Orthopedics</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Doctor.html">
+                                <i class="fas fa-user-md"></i> Doctors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Serviec.html">
+                                <i class="fas fa-medkit"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown ms-lg-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="auth.html" onclick="Login()"><i
+                                            class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                                <li><a class="dropdown-item" href="Profile.html"><i
+                                            class="fas fa-user-circle me-2"></i>Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i
+                                            class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">
+                                <i class="fas fa-info-circle"></i> About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link emergency-btn1" href="#" data-bs-toggle="modal"
+                                data-bs-target="#emergencyModal">
+                                <i class="fas fa-phone-alt"></i> Emergency
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                        alt="Profile" class="profile-avatar">
+                    <div class="profile-info">
+                        <h1 class="profile-name">Sarah Johnson</h1>
+                        <div class="profile-id">Patient ID: MED-10042</div>
+                        <span class="profile-status">Active Patient</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Navigation -->
+        <div class="container">
+            <div class="profile-nav">
+                <ul class="nav nav-tabs" id="profileTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab"
+                            data-bs-target="#overview" type="button" role="tab">
+                            <i class="fas fa-home"></i> Overview
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="appointments-tab" data-bs-toggle="tab"
+                            data-bs-target="#appointments" type="button" role="tab">
+                            <i class="fas fa-calendar-check"></i> Appointments
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="medical-records-tab" data-bs-toggle="tab"
+                            data-bs-target="#medical-records" type="button" role="tab">
+                            <i class="fas fa-file-medical"></i> Medical Records
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="billing-tab" data-bs-toggle="tab" data-bs-target="#billing"
+                            type="button" role="tab">
+                            <i class="fas fa-credit-card"></i> Billing
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings"
+                            type="button" role="tab">
+                            <i class="fas fa-cog"></i> Settings
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="profileTabsContent">
+                <!-- Overview Tab -->
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Personal Information -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Personal Information</h2>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Full Name</p>
+                                        <p class="fw-medium">Sarah Johnson</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Date of Birth</p>
+                                        <p class="fw-medium">April 15, 1985</p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Email Address</p>
+                                        <p class="fw-medium">sarah.johnson@example.com</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Phone Number</p>
+                                        <p class="fw-medium">(555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Gender</p>
+                                        <p class="fw-medium">Female</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Blood Type</p>
+                                        <p class="fw-medium">A+</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="mb-1 text-muted">Address</p>
+                                        <p class="fw-medium">123 Main Street, Apt 4B, New York, NY 10001</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upcoming Appointments -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Upcoming Appointments</h2>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Michael Chen - Cardiology</h5>
+                                        <p class="appointment-details">Tomorrow, 10:00 AM - 11:00 AM</p>
+                                    </div>
+                                    <span class="appointment-status status-confirmed">Confirmed</span>
+                                </div>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-tooth"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Emily Rodriguez - Dental Check-up</h5>
+                                        <p class="appointment-details">May 15, 2023, 2:30 PM - 3:30 PM</p>
+                                    </div>
+                                    <span class="appointment-status status-pending">Pending</span>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a href="#" class="btn btn-outline-primary">View All Appointments</a>
+                                </div>
+                            </div>
+
+                            <!-- Recent Medical Records -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Recent Medical Records</h2>
+                                <div class="medical-record">
+                                    <div class="record-date">April 10, 2023</div>
+                                    <h5 class="record-title">Annual Physical Examination</h5>
+                                    <div class="record-doctor">Dr. James Wilson</div>
+                                    <p>Routine check-up with blood work and general health assessment. Overall health
+                                        status
+                                        is good with recommendations for increased physical activity.</p>
+                                    <div class="text-end">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="medical-record">
+                                    <div class="record-date">February 22, 2023</div>
+                                    <h5 class="record-title">Dental Cleaning</h5>
+                                    <div class="record-doctor">Dr. Lisa Thompson</div>
+                                    <p>Regular dental cleaning and examination. No cavities found, recommended continued
+                                        flossing and regular check-ups.</p>
+                                    <div class="text-end">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a href="#" class="btn btn-outline-primary">View All Records</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <!-- Health Stats -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Health Stats</h2>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>
+                                        <p class="mb-1 text-muted">Height</p>
+                                        <p class="fw-medium">5'7" (170 cm)</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 text-muted">Weight</p>
+                                        <p class="fw-medium">145 lbs (65.8 kg)</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>
+                                        <p class="mb-1 text-muted">Blood Pressure</p>
+                                        <p class="fw-medium">120/80 mmHg</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 text-muted">Heart Rate</p>
+                                        <p class="fw-medium">72 bpm</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="mb-1 text-muted">BMI</p>
+                                        <p class="fw-medium">22.7</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 text-muted">Blood Sugar</p>
+                                        <p class="fw-medium">95 mg/dL</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Insurance Information -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Insurance Information</h2>
+                                <p class="mb-1 text-muted">Provider</p>
+                                <p class="fw-medium mb-3">Blue Cross Blue Shield</p>
+                                <p class="mb-1 text-muted">Policy Number</p>
+                                <p class="fw-medium mb-3">BCBS-12345678</p>
+                                <p class="mb-1 text-muted">Group Number</p>
+                                <p class="fw-medium mb-3">GRP-987654</p>
+                                <p class="mb-1 text-muted">Coverage</p>
+                                <p class="fw-medium">Comprehensive Health Insurance</p>
+                            </div>
+
+                            <!-- Notifications -->
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Notifications</h2>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <div class="notification-title">Appointment Reminder</div>
+                                        <div class="notification-text">Your appointment with Dr. Chen is tomorrow at
+                                            10:00
+                                            AM.</div>
+                                        <div class="notification-time">2 hours ago</div>
+                                    </div>
+                                    <div class="notification-unread"></div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <div class="notification-title">Lab Results Available</div>
+                                        <div class="notification-text">Your recent lab results are now available for
+                                            viewing.</div>
+                                        <div class="notification-time">Yesterday</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <div class="notification-title">Payment Received</div>
+                                        <div class="notification-text">Your payment of $150 has been processed
+                                            successfully.
+                                        </div>
+                                        <div class="notification-time">3 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div class="tab-pane fade" id="appointments" role="tabpanel" aria-labelledby="appointments-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Upcoming Appointments</h2>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Michael Chen - Cardiology</h5>
+                                        <p class="appointment-details">Tomorrow, 10:00 AM - 11:00 AM</p>
+                                        <p class="appointment-details">Location: Main Hospital, Room 305</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end">
+                                        <span class="appointment-status status-confirmed mb-2">Confirmed</span>
+                                        <div class="btn-group">
+                                            <button class="btn btn-sm btn-outline-primary">Reschedule</button>
+                                            <button class="btn btn-sm btn-outline-danger">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-tooth"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Emily Rodriguez - Dental Check-up</h5>
+                                        <p class="appointment-details">May 15, 2023, 2:30 PM - 3:30 PM</p>
+                                        <p class="appointment-details">Location: Dental Clinic, 2nd Floor</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end">
+                                        <span class="appointment-status status-pending mb-2">Pending</span>
+                                        <div class="btn-group">
+                                            <button class="btn btn-sm btn-outline-primary">Confirm</button>
+                                            <button class="btn btn-sm btn-outline-danger">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Past Appointments</h2>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. James Wilson - Annual Physical</h5>
+                                        <p class="appointment-details">April 10, 2023, 9:00 AM - 10:30 AM</p>
+                                        <p class="appointment-details">Location: Main Hospital, Room 210</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end">
+                                        <span class="appointment-status status-confirmed mb-2">Completed</span>
+                                        <button class="btn btn-sm btn-outline-primary">View Summary</button>
+                                    </div>
+                                </div>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Robert Kim - Eye Examination</h5>
+                                        <p class="appointment-details">March 5, 2023, 1:00 PM - 2:00 PM</p>
+                                        <p class="appointment-details">Location: Vision Center, 3rd Floor</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end">
+                                        <span class="appointment-status status-confirmed mb-2">Completed</span>
+                                        <button class="btn btn-sm btn-outline-primary">View Summary</button>
+                                    </div>
+                                </div>
+                                <div class="appointment-card">
+                                    <div class="appointment-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h5 class="appointment-title">Dr. Sarah Johnson - Cardiology Follow-up</h5>
+                                        <p class="appointment-details">February 15, 2023, 11:30 AM - 12:30 PM</p>
+                                        <p class="appointment-details">Location: Cardiology Department, Room 405</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end">
+                                        <span class="appointment-status status-cancelled mb-2">Cancelled</span>
+                                        <button class="btn btn-sm btn-outline-primary">Reschedule</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Book New Appointment</h2>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="specialty" class="form-label">Specialty</label>
+                                        <select class="form-select" id="specialty">
+                                            <option selected>Select specialty</option>
+                                            <option>Cardiology</option>
+                                            <option>Dermatology</option>
+                                            <option>Neurology</option>
+                                            <option>Orthopedics</option>
+                                            <option>Pediatrics</option>
+                                            <option>Ophthalmology</option>
+                                            <option>Dentistry</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="doctor" class="form-label">Doctor</label>
+                                        <select class="form-select" id="doctor">
+                                            <option selected>Select doctor</option>
+                                            <option>Dr. Michael Chen</option>
+                                            <option>Dr. Emily Rodriguez</option>
+                                            <option>Dr. James Wilson</option>
+                                            <option>Dr. Lisa Thompson</option>
+                                            <option>Dr. Robert Kim</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="appointmentDate" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="appointmentDate">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="appointmentTime" class="form-label">Time</label>
+                                        <select class="form-select" id="appointmentTime">
+                                            <option selected>Select time</option>
+                                            <option>9:00 AM - 10:00 AM</option>
+                                            <option>10:00 AM - 11:00 AM</option>
+                                            <option>11:00 AM - 12:00 PM</option>
+                                            <option>1:00 PM - 2:00 PM</option>
+                                            <option>2:00 PM - 3:00 PM</option>
+                                            <option>3:00 PM - 4:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="appointmentReason" class="form-label">Reason for Visit</label>
+                                        <textarea class="form-control" id="appointmentReason" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+                                </form>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Appointment Reminders</h2>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="emailReminder" checked>
+                                    <label class="form-check-label" for="emailReminder">Email Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="smsReminder" checked>
+                                    <label class="form-check-label" for="smsReminder">SMS Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="dayBefore">
+                                    <label class="form-check-label" for="dayBefore">Remind me 1 day before</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="hourBefore" checked>
+                                    <label class="form-check-label" for="hourBefore">Remind me 1 hour before</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Records Tab -->
+                <div class="tab-pane fade" id="medical-records" role="tabpanel" aria-labelledby="medical-records-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Medical History</h2>
+                                <div class="medical-record">
+                                    <div class="record-date">April 10, 2023</div>
+                                    <h5 class="record-title">Annual Physical Examination</h5>
+                                    <div class="record-doctor">Dr. James Wilson</div>
+                                    <p>Routine check-up with blood work and general health assessment. Overall health
+                                        status
+                                        is good with recommendations for increased physical activity.</p>
+                                    <div class="record-details">
+                                        <div class="record-item">
+                                            <div class="record-label">Blood Pressure:</div>
+                                            <div class="record-value">120/80 mmHg</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Heart Rate:</div>
+                                            <div class="record-value">72 bpm</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Temperature:</div>
+                                            <div class="record-value">98.6°F (37°C)</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Weight:</div>
+                                            <div class="record-value">145 lbs (65.8 kg)</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end mt-3">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Report</a>
+                                    </div>
+                                </div>
+
+                                <div class="medical-record">
+                                    <div class="record-date">February 22, 2023</div>
+                                    <h5 class="record-title">Dental Cleaning</h5>
+                                    <div class="record-doctor">Dr. Lisa Thompson</div>
+                                    <p>Regular dental cleaning and examination. No cavities found, recommended continued
+                                        flossing and regular check-ups.</p>
+                                    <div class="record-details">
+                                        <div class="record-item">
+                                            <div class="record-label">Procedure:</div>
+                                            <div class="record-value">Dental Cleaning and Examination</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">X-rays:</div>
+                                            <div class="record-value">Taken (No issues found)</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Next Visit:</div>
+                                            <div class="record-value">August 22, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end mt-3">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Report</a>
+                                    </div>
+                                </div>
+
+                                <div class="medical-record">
+                                    <div class="record-date">November 15, 2022</div>
+                                    <h5 class="record-title">Cardiology Consultation</h5>
+                                    <div class="record-doctor">Dr. Michael Chen</div>
+                                    <p>Consultation for occasional chest discomfort. ECG and stress test performed.
+                                        Results
+                                        show normal heart function with no significant abnormalities.</p>
+                                    <div class="record-details">
+                                        <div class="record-item">
+                                            <div class="record-label">ECG Results:</div>
+                                            <div class="record-value">Normal sinus rhythm</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Stress Test:</div>
+                                            <div class="record-value">Normal, no ischemic changes</div>
+                                        </div>
+                                        <div class="record-item">
+                                            <div class="record-label">Recommendations:</div>
+                                            <div class="record-value">Regular exercise, stress management techniques
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end mt-3">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Report</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Allergies & Conditions</h2>
+                                <div class="mb-4">
+                                    <h5 class="mb-3">Allergies</h5>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-danger me-2">Severe</span>
+                                        <span>Penicillin</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-warning text-dark me-2">Mild</span>
+                                        <span>Pollen</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-3">Chronic Conditions</h5>
+                                    <p>Mild Asthma (Controlled)</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Medications</h2>
+                                <div class="mb-3">
+                                    <h6 class="fw-bold">Albuterol Inhaler</h6>
+                                    <p class="mb-1 text-muted">For asthma symptoms</p>
+                                    <p class="small">2 puffs as needed for shortness of breath</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6 class="fw-bold">Multivitamin</h6>
+                                    <p class="mb-1 text-muted">Daily supplement</p>
+                                    <p class="small">1 tablet daily with food</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Upload Medical Documents</h2>
+                                <div class="upload-btn-wrapper mb-3">
+                                    <button class="upload-btn">
+                                        <i class="fas fa-upload me-2"></i> Upload Documents
+                                    </button>
+                                    <input type="file" name="myfile" />
+                                </div>
+                                <p class="small text-muted">Supported formats: PDF, JPG, PNG (Max size: 10MB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Tab -->
+                <div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="billing-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Recent Invoices</h2>
+                                <div class="billing-card">
+                                    <div class="billing-header">
+                                        <div>
+                                            <div class="billing-title">Invoice #MED-2023-0042</div>
+                                            <div class="text-muted">April 10, 2023</div>
+                                        </div>
+                                        <div class="billing-amount">$150.00</div>
+                                    </div>
+                                    <div class="billing-details">
+                                        <div class="billing-item">
+                                            <div class="billing-label">Service</div>
+                                            <div class="billing-value">Annual Physical Examination</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Doctor</div>
+                                            <div class="billing-value">Dr. James Wilson</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Insurance Coverage</div>
+                                            <div class="billing-value">$120.00</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Your Responsibility</div>
+                                            <div class="billing-value">$30.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="billing-status status-paid">Paid</span>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Invoice</a>
+                                    </div>
+                                </div>
+
+                                <div class="billing-card">
+                                    <div class="billing-header">
+                                        <div>
+                                            <div class="billing-title">Invoice #MED-2023-0036</div>
+                                            <div class="text-muted">February 22, 2023</div>
+                                        </div>
+                                        <div class="billing-amount">$95.00</div>
+                                    </div>
+                                    <div class="billing-details">
+                                        <div class="billing-item">
+                                            <div class="billing-label">Service</div>
+                                            <div class="billing-value">Dental Cleaning</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Doctor</div>
+                                            <div class="billing-value">Dr. Lisa Thompson</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Insurance Coverage</div>
+                                            <div class="billing-value">$75.00</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Your Responsibility</div>
+                                            <div class="billing-value">$20.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="billing-status status-paid">Paid</span>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Invoice</a>
+                                    </div>
+                                </div>
+
+                                <div class="billing-card">
+                                    <div class="billing-header">
+                                        <div>
+                                            <div class="billing-title">Invoice #MED-2022-0128</div>
+                                            <div class="text-muted">November 15, 2022</div>
+                                        </div>
+                                        <div class="billing-amount">$350.00</div>
+                                    </div>
+                                    <div class="billing-details">
+                                        <div class="billing-item">
+                                            <div class="billing-label">Service</div>
+                                            <div class="billing-value">Cardiology Consultation with ECG and Stress Test
+                                            </div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Doctor</div>
+                                            <div class="billing-value">Dr. Michael Chen</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Insurance Coverage</div>
+                                            <div class="billing-value">$280.00</div>
+                                        </div>
+                                        <div class="billing-item">
+                                            <div class="billing-label">Your Responsibility</div>
+                                            <div class="billing-value">$70.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="billing-status status-processing">Processing</span>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Payment Methods</h2>
+                                <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                                    <div class="me-3">
+                                        <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">Visa ending in 4567</div>
+                                        <div class="small text-muted">Expires 05/25</div>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-success">Default</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center p-3 border rounded">
+                                    <div class="me-3">
+                                        <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">Mastercard ending in 8901</div>
+                                        <div class="small text-muted">Expires 11/24</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-outline-primary w-100">
+                                        <i class="fas fa-plus me-2"></i> Add Payment Method
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Billing Summary</h2>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>Total Billed (YTD)</div>
+                                    <div class="fw-bold">$595.00</div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>Insurance Coverage</div>
+                                    <div class="fw-bold">$475.00</div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>Your Responsibility</div>
+                                    <div class="fw-bold">$120.00</div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>Amount Paid</div>
+                                    <div class="fw-bold text-success">$50.00</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>Outstanding Balance</div>
+                                    <div class="fw-bold text-danger">$70.00</div>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary w-100">Make a Payment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Personal Information</h2>
+                                <form>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" value="Sarah">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" value="Johnson">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="email" class="form-label">Email Address</label>
+                                            <input type="email" class="form-control" id="email"
+                                                value="sarah.johnson@example.com">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phone" class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" value="(555) 123-4567">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="dob" class="form-label">Date of Birth</label>
+                                            <input type="date" class="form-control" id="dob" value="1985-04-15">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="gender" class="form-label">Gender</label>
+                                            <select class="form-select" id="gender">
+                                                <option>Select gender</option>
+                                                <option selected>Female</option>
+                                                <option>Male</option>
+                                                <option>Non-binary</option>
+                                                <option>Prefer not to say</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control mb-2" id="address"
+                                            value="123 Main Street, Apt 4B">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" placeholder="City"
+                                                    value="New York">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control" placeholder="State" value="NY">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" placeholder="Zip Code"
+                                                    value="10001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Change Password</h2>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmPassword">
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Update Password</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Profile Picture</h2>
+                                <div class="text-center mb-3">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                        alt="Profile" class="profile-avatar mb-3">
+                                    <div class="upload-btn-wrapper">
+                                        <button class="btn btn-outline-primary">
+                                            <i class="fas fa-camera me-2"></i> Change Photo
+                                        </button>
+                                        <input type="file" name="profilePicture" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Notification Settings</h2>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="smsNotifications" checked>
+                                    <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="appointmentReminders" checked>
+                                    <label class="form-check-label" for="appointmentReminders">Appointment
+                                        Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="medicationReminders">
+                                    <label class="form-check-label" for="medicationReminders">Medication
+                                        Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="billingAlerts" checked>
+                                    <label class="form-check-label" for="billingAlerts">Billing Alerts</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="marketingEmails">
+                                    <label class="form-check-label" for="marketingEmails">Marketing Emails</label>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h2 class="profile-card-title">Account Actions</h2>
+                                <button class="btn btn-outline-primary w-100 mb-3">
+                                    <i class="fas fa-download me-2"></i> Download My Data
+                                </button>
+                                <button class="btn btn-outline-danger w-100">
+                                    <i class="fas fa-user-times me-2"></i> Deactivate Account
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Emergency Button -->
+    <button class="emergency-btn" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+        <i class="fas fa-plus-circle"></i>
+    </button>
+
+    <!-- Emergency Modal -->
+    <div class="modal fade emergency-modal" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emergencyModalLabel"><i class="fas fa-exclamation-triangle"></i>
+                        Emergency Services</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger mb-4">
+                        <strong>IMPORTANT:</strong> If you are experiencing a life-threatening emergency, please call
+                        911 immediately or go to your nearest emergency room.
+                    </div>
+
+                    <h5 class="mb-4">Emergency Contact Information</h5>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Emergency Hotline</div>
+                            <div class="emergency-contact-value">+1 (800) 911-MEDI</div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Ambulance Service</div>
+                            <div class="emergency-contact-value">+1 (800) 247-7911</div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-contact-item">
+                        <div class="emergency-contact-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="emergency-contact-info">
+                            <div class="emergency-contact-title">Emergency Room Location</div>
+                            <div class="emergency-contact-value">123 Medical Center Drive, New York, NY 10001</div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-4">Quick Actions</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <a href="tel:+18009116334" class="emergency-action-btn">
+                                <i class="fas fa-phone-alt"></i> Call Emergency Hotline
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-video"></i> Start Emergency Video Call
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-map-marker-alt"></i> Get Directions to ER
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="emergency-action-btn">
+                                <i class="fas fa-first-aid"></i> First Aid Instructions
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-4">Emergency Services We Provide</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i> Cardiac
+                                    Emergencies</li>
+                                <li class="list-group-item"><i class="fas fa-brain text-danger me-2"></i> Stroke
+                                    Treatment</li>
+                                <li class="list-group-item"><i class="fas fa-bone text-danger me-2"></i> Trauma Care
+                                </li>
+                                <li class="list-group-item"><i class="fas fa-lungs text-danger me-2"></i> Respiratory
+                                    Emergencies</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fas fa-allergies text-danger me-2"></i> Severe
+                                    Allergic Reactions</li>
+                                <li class="list-group-item"><i class="fas fa-thermometer-full text-danger me-2"></i>
+                                    High Fever Treatment</li>
+                                <li class="list-group-item"><i class="fas fa-pills text-danger me-2"></i> Poisoning &
+                                    Overdose</li>
+                                <li class="list-group-item"><i class="fas fa-baby text-danger me-2"></i> Pediatric
+                                    Emergencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="tel:+18009116334" class="btn btn-danger">Call Emergency Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About Column -->
+                <div class="col-lg-4 col-md-6 footer-col">
+                    <div class="footer-about p-0">
+                        <a href="#" class="footer-logo text-decoration-none">
+                            <i class="fas fa-hospital bg-white rounded-circle text-primary py-3 px-3"></i> MediCare+
+                        </a>
+                        <p>Providing exceptional healthcare services with compassion and excellence since 1995. Our
+                            mission is to deliver high-quality, patient-centered care.</p>
+                        <div class="footer-social text-decoration-none">
+                            <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="col-lg-2 col-md-6 footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links p-0">
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="About.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="Serviec.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="Doctor.html"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Departments</a></li>
+                        <li><a href="Contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Departments Column -->
+                <div class="col-lg-2 col-md-6 footer-col">
+                    <h4 class="footer-heading">Departments</h4>
+                    <ul class="footer-links p-0">
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Neurology</a></li>
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Orthopedics</a></li>
+                        <li><a href="Department.html"><i class="fas fa-chevron-right"></i> Radiology</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#emergencyModal"><i
+                                    class="fas fa-chevron-right"></i>
+                                Emergency
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-4 col-md-6 footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact p-0">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Drive, Health City, HC 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (123) 456-7890<br>+1 (123) 456-7891</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@medicare.com<br>support@medicare.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Emergency Services<br>OPD: Mon-Sat, 8:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <h4 class="footer-heading">Subscribe to Newsletter</h4>
+                    <p class="footer-newsletter">Stay updated with our latest health news and offers.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2023 MediCare+ Hospital. All Rights Reserved. | <a href="#"
+                            style="color: var(--hospital-blue);">Privacy Policy</a> | <a href="#"
+                            style="color: var(--hospital-blue);">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Coutom js -->
+    <script src="index.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Bootstrap tabs
+            var triggerTabList = [].slice.call(document.querySelectorAll('#profileTabs button'))
+            triggerTabList.forEach(function (triggerEl) {
+                var tabTrigger = new bootstrap.Tab(triggerEl)
+                triggerEl.addEventListener('click', function (event) {
+                    event.preventDefault()
+                    tabTrigger.show()
+                })
+            })
+
+            // Form submission handling
+            $('form').submit(function (e) {
+                e.preventDefault();
+                // Show success message (in a real app, this would submit to the server)
+                alert('Changes saved successfully!');
+            });
+        });
+    </script>
+</body>
+
+</html>

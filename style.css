@@ -1,0 +1,839 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Hero section code */
+
+.para {
+    text-align: justify;
+}
+
+#Hero_btn {
+    background-color: #1da1f2;
+    color: white !important;
+    transition: all 0.5s ease-in-out;
+    padding: 8px 15px;
+}
+
+#Hero_btn:hover {
+    background-color: #002060;
+    color: white !important;
+    padding: 10px 17px;
+}
+
+#Hero_btn1 {
+    background-color: #002060;
+    color: white !important;
+    padding: 8px 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+#Hero_btn1:hover {
+    background-color: #1da1f2;
+    color: white !important;
+    padding: 10px 17px;
+}
+
+.carousel-item {
+    height: 80vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center right;
+    position: relative;
+    color: black !important;
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    left: 10%;
+    right: 50%;
+}
+
+.carousel-caption h1 span {
+    color: #339CFF;
+}
+
+.carousel-caption h1,
+.carousel-caption h5,
+.carousel-caption p,
+.carousel-caption a {
+    color: black !important;
+}
+
+.carousel-item {
+    color: black !important;
+}
+
+.Receive {
+    padding: 3px 8px;
+    background-color: whitesmoke;
+    border-left: 5px solid #0a1f44;
+    color: black;
+}
+
+.btn-custom {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-custom:hover {
+    padding: 12px 23px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: #0a1f44;
+    color: white !important;
+}
+
+.doctor-carousel {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doctor-carousel img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Botom section */
+.banner-section {
+    background-color: #002060;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.banner-content {
+    padding: 40px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-text {
+    color: white;
+    padding-left: 20px;
+}
+
+.banner-text h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.banner-text p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.banner-image-container {
+    height: 100%;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-btn {
+    background-color: white;
+    color: #002060;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.booking-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.arrow-icon {
+    margin-left: 5px;
+}
+
+/* Doctor_Section */
+.about-more-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Card of the icon code */
+.stats-section {
+    background-color: #0a2158;
+    padding: 3rem 0;
+    color: white;
+    overflow-x: auto;
+    /* Enable horizontal scrolling if needed */
+}
+
+.stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 768px;
+    /* Minimum width to prevent squeezing */
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.stat-icon {
+    background-color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.stat-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    font-size: 1.25rem;
+}
+
+.divider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 100px;
+}
+
+/* High-Quality Services This Doctor */
+.service-label {
+    color: #0d9dff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.service-label::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #0d9dff;
+    margin-right: 10px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.active-card {
+    background-color: #0d4c8b;
+    color: white;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #0a2158;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.icon-arrow {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #0d9dff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+
+/* Carouel of tem members */
+.team-label {
+    color: #0d9dff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.team-label::before,
+.team-label::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #0d9dff;
+    margin: 0 10px;
+}
+
+.doctor-card {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    height: 380px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.doctor-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.doctor-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a2158;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.doctor-card:hover .doctor-info {
+    opacity: 1;
+}
+
+.doctor-circle-img {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin-bottom: 15px !important;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    color: #0a2158;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    background-color: #1da1f2;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    color: #0a1f44;
+    text-decoration: none;
+}
+
+.owl-dots .owl-dot span {
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #d6e7f3;
+}
+
+.owl-dots .owl-dot.active span {
+    background-color: #0a2158;
+}
+
+/* Medical Ready */
+#Medical_bg {
+    background-image: url(asset/service_bg_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 70vh;
+}
+
+.section-label {
+    color: #2196f3;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.section-label::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #2196f3;
+    margin-right: 10px;
+}
+
+.service-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #0a2158;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.service-icon:hover {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background-color: #002060;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* All The Great Work T */
+/* Custom button tabs with consistent colors */
+.button-tabs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 5px 0;
+}
+
+.button-tab {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    color: white;
+    background-color: #6c757d;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect with transition */
+.button-tab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-tab:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Active state */
+.button-tab.active {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dental-tab {
+    background: linear-gradient(135deg, #20c997 0%, #099268 100%);
+}
+
+.dental-tab:hover {
+    background: linear-gradient(135deg, #2fd8a4 0%, #0ca678 100%);
+}
+
+.dental-tab.active {
+    background: linear-gradient(135deg, #099268 0%, #087f5b 100%);
+}
+
+.cardiology-tab {
+    background: linear-gradient(135deg, #fa5252 0%, #e03131 100%);
+}
+
+.cardiology-tab:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #f03e3e 100%);
+}
+
+.cardiology-tab.active {
+    background: linear-gradient(135deg, #e03131 0%, #c92a2a 100%);
+}
+
+.neurology-tab {
+    background: linear-gradient(135deg, #be4bdb 0%, #9c36b5 100%);
+}
+
+.neurology-tab:hover {
+    background: linear-gradient(135deg, #cc5de8 0%, #ae3ec9 100%);
+}
+
+.neurology-tab.active {
+    background: linear-gradient(135deg, #9c36b5 0%, #862e9c 100%);
+}
+
+.medical-tab {
+    background: linear-gradient(135deg, #4dabf7 0%, #339af0 100%);
+}
+
+.medical-tab:hover {
+    background: linear-gradient(135deg, #5cb0fa 0%, #4aa3f5 100%);
+}
+
+.medical-tab.active {
+    background: linear-gradient(135deg, #339af0 0%, #228be6 100%);
+}
+
+.card-content {
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 75%;
+    right: 40%;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-content:hover {
+    background-color: #002060;
+    color: white !important;
+}
+
+
+/* Measure code */
+.measure-section {
+    min-height: 60vh;
+    background: linear-gradient(#002060d3, #0a1f44b6), url('asset/service_bg_2.png') center/cover no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Navtab */
+.nav-pills .nav-link {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    background-color: #0a1f44;
+    transition: 0.3s;
+    color: #fff !important;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #0a1f44;
+    color: #fff !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0a1f44;
+    color: white;
+    position: relative;
+}
+
+.nav-pills .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #0052cc transparent transparent transparent;
+    color: #fff !important;
+}
+
+.icon-box i {
+    font-size: 1.25rem;
+    margin-right: 8px;
+}
+
+.tab-content img {
+    border-radius: 0.5rem;
+}
+
+.read-more-btn {
+    background-color: #0052cc;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.read-more-btn i {
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .nav-pills .nav-link {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.appointment-section {
+    background-color: #e8f0f5;
+}
+
+.form-box {
+    background-color: #e8f0f5;
+    padding: 40px;
+}
+
+.form-box h2 {
+    font-weight: 700;
+}
+
+.form-box p {
+    font-size: 18px;
+}
+
+.form-control {
+    border-radius: 8px;
+    height: 50px;
+}
+
+textarea.form-control {
+    height: 120px;
+}
+
+.appointment-img {
+    height: 50%;
+    object-fit: cover;
+}
+
+/* Bottom carousel */
+.health-section-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.health-article-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
+    margin: 10px;
+    height: 100%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.health-article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.article-image-container {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.article-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.health-article-card:hover .article-image-container img {
+    transform: scale(1.05);
+}
+
+.article-content-wrapper {
+    padding: 20px;
+}
+
+.article-category-label {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.article-category-label i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.article-publish-date {
+    color: #6c757d;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.article-title-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #343a40;
+    transition: color 0.3s ease;
+}
+
+.health-article-card:hover .article-title-heading {
+    color: #007bff;
+}
+
+.article-description-text {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.read-more-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.read-more-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.health-article-card:hover .read-more-link i {
+    transform: translateX(3px);
+}
+
+.read-more-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.carousel-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel-navigation button {
+    background: #007bff !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 15px !important;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.carousel-navigation button:hover {
+    background: #0056b3 !important;
+    transform: scale(1.05);
+}
+
+.image-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.health-article-card:hover .image-hover-overlay {
+    opacity: 1;
+}
+
+.image-hover-overlay i {
+    color: white;
+    font-size: 40px;
+}
+
+@media (max-width: 768px) {
+    .health-section-heading {
+        font-size: 24px;
+    }
+    
+    .article-image-container {
+        height: 150px;
+    }
+}

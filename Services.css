@@ -1,0 +1,466 @@
+:root {
+    --hospital-blue: #2a7fff;
+    --dark-blue: #0052cc;
+    --light-blue: #e6f0ff;
+    --emergency-red: #ff4d4f;
+    --text-dark: #333;
+    --text-light: #777;
+    --footer-bg: #0a1f44;
+    --footer-text: #a8b2d1;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+.btn-primary {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-outline-primary {
+    color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.bg-light {
+    background-color: var(--light-blue) !important;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(42, 127, 255, 0.85), rgba(0, 82, 204, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--hospital-blue);
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--hospital-blue);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.service-title {
+    color: var(--dark-blue);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.service-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.service-link {
+    color: var(--hospital-blue);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--dark-blue);
+}
+
+.service-link i {
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover i {
+    transform: translateX(5px);
+}
+
+.featured-service {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.featured-service img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.featured-service:hover img {
+    transform: scale(1.05);
+}
+
+.featured-service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+}
+
+.featured-service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.featured-service-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 25px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.stats-icon {
+    font-size: 2.5rem;
+    color: var(--hospital-blue);
+    margin-bottom: 15px;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.process-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--hospital-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.process-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+}
+
+.process-description {
+    color: var(--text-light);
+}
+
+.process-connector {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--light-blue);
+    z-index: -1;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    font-size: 50px;
+    color: var(--light-blue);
+    position: absolute;
+    font-family: serif;
+}
+
+.testimonial-text::before {
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial-text::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--light-blue);
+}
+
+.testimonial-name {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.testimonial-role {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.rating-stars {
+    color: #ffc107;
+    margin-bottom: 5px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: white;
+    color: var(--dark-blue);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--light-blue);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+    background-color: var(--hospital-blue);
+    color: white;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 1000px;
+}
+
+.nav-tabs {
+    border: none;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--hospital-blue);
+    background-color: rgba(42, 127, 255, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--hospital-blue);
+    border: none;
+    font-weight: 500;
+}
+
+.price-card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.price-header {
+    background-color: var(--light-blue);
+    padding: 30px;
+    text-align: center;
+}
+
+.price-title {
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--hospital-blue);
+    margin-bottom: 10px;
+}
+
+.price-period {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.price-features {
+    padding: 30px;
+}
+
+.price-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.price-feature i {
+    color: var(--hospital-blue);
+    margin-right: 10px;
+}
+
+.price-feature.disabled {
+    color: var(--text-light);
+}
+
+.price-feature.disabled i {
+    color: #ccc;
+}
+
+.price-action {
+    padding: 0 30px 30px;
+    text-align: center;
+}
+
+.price-action .btn {
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--emergency-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1;
+}

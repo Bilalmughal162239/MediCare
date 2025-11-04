@@ -1,0 +1,226 @@
+:root {
+    --hospital-blue: #2a7fff;
+    --dark-blue: #0052cc;
+    --light-blue: #e6f0ff;
+    --emergency-red: #ff4d4f;
+    --text-dark: #333;
+    --text-light: #777;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+.btn-primary {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-outline-primary {
+    color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--hospital-blue);
+    border-color: var(--hospital-blue);
+}
+
+.bg-light {
+    background-color: var(--light-blue) !important;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(42, 127, 255, 0.85), rgba(0, 82, 204, 0.9)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--hospital-blue);
+}
+
+.department-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+/* .department-img {
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+} */
+
+.department-card:hover .department-img {
+    transform: scale(1.05);
+}
+
+.department-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-blue);
+    color: var(--hospital-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.department-card:hover .department-icon {
+    background-color: var(--hospital-blue);
+    color: white;
+}
+
+.department-detail {
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.department-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.department-feature i {
+    color: var(--hospital-blue);
+    margin-right: 10px;
+    min-width: 20px;
+}
+
+.doctor-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.doctor-item:hover {
+    background-color: var(--light-blue);
+}
+
+.doctor-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.doctor-name {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.doctor-specialty {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.equipment-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.equipment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(42, 127, 255, 0.1);
+}
+
+.nav-tabs {
+    border: none;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--hospital-blue);
+    background-color: rgba(42, 127, 255, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--hospital-blue);
+    border: none;
+    font-weight: 500;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 25px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(42, 127, 255, 0.1);
+}
+
+.stats-icon {
+    font-size: 2.5rem;
+    color: var(--hospital-blue);
+    margin-bottom: 15px;
+}
